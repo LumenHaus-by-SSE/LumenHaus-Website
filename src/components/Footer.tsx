@@ -1,22 +1,49 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
+import Link from "next/link";
 
-const logo = "/images/logo-placeholder.svg"; // Place your logo in public/images
-const imgPlaceholder = "/images/img-placeholder.svg"; // Place a placeholder image in public/images
+const imgPlaceholder = "/images/img-placeholder.svg";
+
+const otherPages = [
+  {
+    name: "Privacy Policy",
+    href: "/privacy-policy",
+  },
+  {
+    name: "Term Of Service",
+    href: "/term-of-service",
+  },
+  {
+    name: "Disclaimer",
+    href: "/disclaimer",
+  },
+  {
+    name: "Credit",
+    href: "/credit",
+  },
+  {
+    name: "FAQ",
+    href: "/faq",
+  },
+];
 
 const Footer = () => {
   return (
     <footer className="w-full bg-[#f5f5f5]">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-start md:items-center">
+      <div className="max-w-[80rem] mx-auto py-16 flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-start md:items-center">
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-          <Image
-            src={logo}
-            alt="LumenHaus Logo"
-            width={180}
-            height={60}
-            className="mb-4"
-          />
+          <Link href="/" className="mb-8">
+            <Image
+              src="/images/Logo_white.png"
+              alt="logo"
+              width={60}
+              height={60}
+              className="invert"
+            />
+          </Link>
           <p className="text-gray-500">
             Nunc a purus sit amet nulla porttitor auctor vitae eu purus.
             Suspendisse non bibendum lectus. Mauris ut dignissim arcu, vel
@@ -25,27 +52,19 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex-1 flex flex-col lg:flex-row items-center justify-between gap-10 w-full mt-8 md:mt-0">
-          <div>
-            <p className="text-[#e4bb7d] text-base font-semibold mb-2">
+        <div className="flex-1 flex flex-col lg:flex-row items-center justify-between gap-8 w-full mt-8 md:mt-0">
+          <div className="self-start p-6">
+            <p className="text-[#e4bb7d] text-base font-semibold mb-8">
               OTHER PAGES
             </p>
-            <ul className="text-gray-700 text-sm mb-6 space-y-1">
-              <li className="flex items-center gap-2">
-                <span className="text-lg">+</span> Privacy Policy
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-lg">+</span> Term Of Service
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-lg">+</span> Disclaimer
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-lg">+</span> Credit
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-lg">+</span> FAQ
-              </li>
+            <ul className="text-gray-700 text-sm mb-8 space-y-4">
+              {otherPages.map((page) => (
+                <li key={page.name} className="flex items-center gap-4">
+                  <Link href={page.href} className="text-lg">
+                    <span className="text-lg">+</span> {page.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -82,26 +101,31 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full bg-[#222] py-6 px-4 flex flex-col md:flex-row items-center justify-center">
-        <div className="flex items-center justify-between gap-4 lg:w-3/5">
-          <p className="text-white text-sm mb-2 md:mb-0">
-            Copyright 2025 © LumenHaus by SSE
-          </p>
-          <div className="flex items-center gap-8">
-            <div className="flex gap-6 text-[#e4bb7d] text-sm">
-              <a href="#" className="hover:underline">
-                Facebook
-              </a>
-              <a href="#" className="hover:underline">
-                Instagram
-              </a>
-              <a href="#" className="hover:underline">
-                Pinterest
-              </a>
+      <div className="w-full bg-[#222] py-16 px-4 sm:px-6 md:px-8 lg:px-12 items-center justify-center">
+        <div className="max-w-[80rem] mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative">
+            <p className="text-white text-sm mb-2 md:mb-0">
+              Copyright 2025 © LumenHaus by SSE
+            </p>
+            <div className="flex items-center gap-8">
+              <div className="flex gap-8 text-[#e4bb7d] text-sm">
+                <Link href="#" className="hover:underline">
+                  Facebook
+                </Link>
+                <Link href="#" className="hover:underline">
+                  Instagram
+                </Link>
+                <Link href="#" className="hover:underline">
+                  Pinterest
+                </Link>
+              </div>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="p-2 rounded-full bg-[#222] border-none hover:bg-[#333] transition fixed bottom-13 right-5 z-100"
+              >
+                <ArrowUp className="text-white" size={30} />
+              </button>
             </div>
-            <button className="ml-6 p-2 rounded-full bg-transparent border-none hover:bg-[#333] transition">
-              <ArrowUp className="text-white" size={22} />
-            </button>
           </div>
         </div>
       </div>

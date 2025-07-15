@@ -5,6 +5,7 @@ import React from "react";
 import Topbar from "@/components/topbar";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
+import { montserrat, poppins } from "@/lib/fonts"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${poppins.className}`}
       >
         <Topbar/>
         <Navbar/>

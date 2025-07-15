@@ -15,6 +15,19 @@ interface ConceptCard {
   description: string;
 }
 
+  const getCardHeight = (size: string) => {
+    switch (size) {
+      case "small":
+        return "h-32";
+      case "medium":
+        return "h-40";
+      case "large":
+        return "h-48";
+      default:
+        return "h-40";
+    }
+  };
+
 const categories: CategoryCard[] = [
   {
     title: "RESIDENTIAL",
@@ -68,46 +81,34 @@ const conceptCards: ConceptCard[] = [
 ];
 
 const Categories = () => {
-  const getCardHeight = (size: string) => {
-    switch (size) {
-      case "small":
-        return "h-32";
-      case "medium":
-        return "h-40";
-      case "large":
-        return "h-48";
-      default:
-        return "h-40";
-    }
-  };
 
   return (
-    <section className="min-h-screen bg-white flex flex-col lg:flex-row items-center justify-center p-4 sm:p-6 md:p-8">
-      <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-8 lg:gap-12">
-        <div className="flex-1 w-full mb-8 lg:mb-0">
+    <section className="min-h-screen bg-white flex flex-col lg:flex-row items-center justify-center py-16 px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="max-w-[80rem] w-full flex flex-col lg:flex-row gap-8">
+        <div className="flex-1 w-full mb-8 lg:mb-0 flex flex-col items-center justify-center">
           <div className="mb-8">
-            <p className="text-[#e4bb7d] text-base md:text-lg font-medium tracking-wider uppercase mb-4">
+            <p className="text-[#e4bb7d] text-base md:text-lg font-medium tracking-wider uppercase mb-8">
               HOW DO WE WORK ?
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-8">
               WE DESIGN FOR YOUR
               <br />
               SATISFACTION
             </h1>
-            <p className="text-gray-600 mt-4 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed mb-8">
               In hac habitasse platea dictumst. Aliquam fringilla est ut
               vulputate sollicitudin. Fusce fringilla feugiat ipsum, nec rhoncus
               sapien dictum sed. Phasellus quis libero elit.
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 self-start">
             {conceptCards.map((card) => (
-              <div className="flex gap-4 sm:gap-6" key={card.number}>
+              <div className="flex gap-6" key={card.number}>
                 <div className="text-[#e4bb7d] font-bold text-3xl sm:text-4xl md:text-5xl self-center">
                   {card.number.toString().padStart(2, "0")}
                 </div>
-                <div className="flex flex-col justify-center gap-2 sm:gap-3">
+                <div className="flex flex-col justify-center gap-3">
                   <h3 className="font-bold text-gray-800 text-base sm:text-lg">
                     {card.title}
                   </h3>
@@ -126,7 +127,7 @@ const Categories = () => {
               <div
                 key={cat.title}
                 className={`flex flex-col items-center ${
-                  idx % 2 === 0 ? "mt-6 sm:mt-10" : ""
+                  idx % 2 === 0 ? "mt-8" : ""
                 }`}
               >
                 <div className="w-full aspect-square relative">
@@ -138,8 +139,8 @@ const Categories = () => {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
-                <div className="w-full bg-white rounded-lg shadow-xl -mt-2 flex flex-col items-center p-3 sm:p-4">
-                  <h3 className="font-bold text-[#e4bb7d] text-base sm:text-lg uppercase mb-1 text-center">
+                <div className="w-full bg-white rounded-lg shadow-xl -mt-2 flex flex-col items-center p-6">
+                  <h3 className="font-bold text-[#e4bb7d] text-base sm:text-lg uppercase mb-4 text-center">
                     {cat.title}
                   </h3>
                   <p className="text-gray-600 text-xs sm:text-sm md:text-base text-center">

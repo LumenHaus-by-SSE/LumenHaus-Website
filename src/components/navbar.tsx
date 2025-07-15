@@ -40,17 +40,17 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="w-full p-10 bg-[#1d1d1d] text-white flex items-center justify-center lg:mt-1">
+      <header className="w-full p-8 bg-[#1d1d1d] text-white flex items-center justify-center lg:mt-1">
         <nav className="lg:w-3/5 flex items-center justify-between w-full">
-          <div>
+          <Link href="/">
             <Image
               src="/images/Logo_white.png"
               alt="logo"
               width={40}
               height={40}
             />
-          </div>
-          <div className="flex items-center justify-between gap-10">
+          </Link>
+          <div className="flex items-center justify-between gap-8">
             
             <Link href="/" className="text-[#e4bb7d] text-sm hidden lg:inline">
               {navigations[0]}
@@ -63,7 +63,7 @@ const Navbar = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
-                  className="text-white text-sm focus:outline-none flex items-center gap-1"
+                  className="text-white text-sm focus:outline-none flex items-start gap-1"
                   type="button"
                 >
                   {item}
@@ -81,7 +81,6 @@ const Navbar = () => {
                     />
                   </svg>
                 </button>
-                {/* Dropdown menu */}
                 {openDropdown === item && (
                   <div className="absolute left-0 w-40 shadow-lg bg-[#222] z-20">
                     <div className="py-1 flex flex-col">
@@ -168,7 +167,7 @@ const Navbar = () => {
         } transform duration-300 ease-out bg-black`}
       >
         <div className="flex flex-col items-center justify-center h-full">
-          <div className="flex flex-col items-start justify-center gap-10">
+          <div className="flex flex-col items-start justify-center gap-8">
             <Link href="/" className="text-[#e4bb7d] text-2xl">
               {navigations[0]}
             </Link>

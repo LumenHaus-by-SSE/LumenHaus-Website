@@ -14,18 +14,6 @@ const pricing = [
     highlight: false,
   },
   {
-    title: "FURNITURE DESIGN",
-    price: "$ 900",
-    features: [
-      "FURNITURE FOR LIVING ROOM",
-      "FURNITURE REFURBISHMENT",
-      "SOFAS AND AMCHAIRS",
-      "TABLES AND CHAIRS",
-    ],
-    button: "CONTACT US",
-    highlight: false,
-  },
-  {
     title: "COMPLETE INTERIOR DESIGN",
     price: "$ 1200",
     features: [
@@ -40,18 +28,28 @@ const pricing = [
     button: "CONTACT US",
     highlight: true,
   },
+  {
+    title: "FURNITURE DESIGN",
+    price: "$ 900",
+    features: [
+      "FURNITURE FOR LIVING ROOM",
+      "FURNITURE REFURBISHMENT",
+      "SOFAS AND AMCHAIRS",
+      "TABLES AND CHAIRS",
+    ],
+    button: "CONTACT US",
+    highlight: false,
+  },
 ];
 
 const Price = () => {
   return (
-    <section className="w-full bg-[#f3f3f3] pb-0">
-      {/* Top Hero Section */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16 pt-16 px-4 md:px-0">
-        {/* Left Content */}
-        <div className="flex-1 max-w-xl">
-          <div className="text-[#E6B17A] text-base font-semibold mb-2">
+    <section className="w-full bg-[#f3f3f3] py-16">
+      <div className="max-w-[80rem] mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 p-6 xl:p-0 justify-evenly ">
+        <div className="flex-1">
+          <h1 className="text-[#E6B17A] text-base font-semibold mb-2">
             IMPROVING YOUR LIFE
-          </div>
+          </h1>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#222] mb-4 leading-tight">
             GREAT OFFER
             <br />
@@ -63,17 +61,14 @@ const Price = () => {
             elementum non sapien pretium faucibus. In convallis maximus turpis.
           </p>
         </div>
-        {/* Right Image Placeholder */}
         <div className="flex-1 w-full flex justify-center md:justify-end items-center">
           <div
             className="w-full h-48 md:h-72 lg:h-80 xl:h-[320px] bg-gray-500"
-            style={{ maxWidth: "480px" }}
           ></div>
         </div>
       </div>
-      {/* Pricing Cards Section */}
       <div className="w-full bg-white pt-0 pb-20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-6 -mt-24 px-4 md:px-0">
+        <div className="max-w-[80rem] mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-6 -mt-24 px-4 md:px-0">
           {pricing.map((plan, idx) => (
             <div
               key={plan.title}
@@ -101,7 +96,6 @@ const Price = () => {
               >
                 Donec rutrum felis est, at sollicitudin dui auctor vel
               </div>
-              {/* Price */}
               <div className={`w-full flex flex-col items-center mb-6`}>
                 <div
                   className={`w-full flex items-center justify-center ${
@@ -114,15 +108,13 @@ const Price = () => {
                   {plan.price.replace(/\$\s?/, "")}
                 </div>
               </div>
-              {/* Features */}
               <ul className="flex flex-col gap-2 text-xs md:text-sm mb-6 text-center">
                 {plan.features.map((f, i) => (
                   <li key={i} className="tracking-wide">
                     {f}
                   </li>
                 ))}
-              </ul>
-              {/* Button */}
+              </ul> 
               <button
                 className={`mt-auto px-6 py-3 text-xs font-semibold rounded-none shadow-none border-none transition
                   ${

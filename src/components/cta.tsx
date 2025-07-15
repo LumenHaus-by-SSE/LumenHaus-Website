@@ -12,7 +12,7 @@ const Cta = () => {
           priority
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full">
           <div className="text-left text-white max-w-md space-y-4">
             <p className="text-base md:text-lg font-medium text-[#e8bd7a] uppercase">
               Getting it Right
@@ -22,7 +22,7 @@ const Cta = () => {
               <br />
               of Perfection
             </h2>
-            <button className="bg-[#e4bb7d] text-white px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-bold hover:bg-[#d1a760] transition-colors duration-300 w-fit mx-auto lg:mx-0 tracking-wide">
+            <button className="bg-[#e4bb7d] text-white px-8 py-3 text-xs sm:text-sm font-bold hover:bg-[#d1a760] transition-colors duration-300 w-fit mx-auto lg:mx-0 tracking-wide">
               CONTACT US
             </button>
           </div>

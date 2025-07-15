@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 
 const imgPlaceholder = "/images/img-placeholder.svg";
 
@@ -31,14 +31,13 @@ const accordionData = [
 ];
 
 const DesignProcessSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className="w-full py-16 bg-white relative">
-      <div className="bg-[#f3f3f3] absolute top-0 right-0 h-2/3 w-2/3 sm:w-3/5 z-0"></div>
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 px-4 md:px-8 items-center lg:items-start justify-between">
-        <div className="flex-1 flex flex-col items-center justify-center w-full z-10">
-          <div className="w-full max-w-lg aspect-[5/3] bg-gray-400 mx-auto relative overflow-hidden">
+      <div className="bg-[#f3f3f3] absolute top-0 right-0 h-2/3 w-2/3 sm:w-3/5 z-0 hidden"></div>
+      <div className="max-w-[80rem] mx-auto flex flex-col lg:flex-row gap-8 p-6 lg:p-0 items-center lg:items-start justify-between">
+        <div className="flex-1 flex flex-col items-center justify-center w-full z-10 gap-8">
+          <div className="w-full max-w-2xl aspect-[5/2] bg-gray-400 mx-auto relative overflow-hidden">
             <Image
               src={imgPlaceholder}
               alt="Design Process"
@@ -46,10 +45,10 @@ const DesignProcessSection = () => {
               className="object-cover"
             />
           </div>
-          <div className="w-full max-w-lg mt-8">
+          <div className="w-full max-w-2xl">
             {progressData.map((item, i) => (
-              <div key={item.label} className="mb-4">
-                <div className="flex justify-between items-center mb-1">
+              <div key={item.label} className="mb-8">
+                <div className="flex justify-between items-center mb-2">
                   <span className="font-semibold text-sm md:text-base text-black uppercase tracking-tight">
                     {item.label}
                   </span>
@@ -65,50 +64,38 @@ const DesignProcessSection = () => {
                 </div>
               </div>
             ))}
-            <p className="text-gray-400 text-sm mt-6">
+            <p className="text-gray-400 text-sm mt-8 mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
           </div>
         </div>
-        <div className="flex-1 flex flex-col justify-center w-full max-w-xl z-10">
-          <p className="text-[#e4bb7d] text-base font-semibold mb-2 uppercase tracking-wide">
-            HOW DO WE DO IT
+        <div className="flex-1 flex flex-col justify-center z-10">
+          <p className="text-[#e4bb7d] text-base font-semibold mb-4 uppercase tracking-wide">
+            DESIGN PROCESS
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-            OUR DESIGN
+            HOW WE CREATE
             <br />
-            PROCESS
+            YOUR DREAM SPACE
           </h2>
           <p className="text-gray-500 text-base mb-8 max-w-xl">
-            Curabitur a orci vel diam interdum hendrerit commodo in mi. Nunc
-            consequat felis vitae nulla feugiat, a ultricies ligula placerat.
-            Aliquam nec mauris et purus pretium eleifend in et erat.
+            Fusce at tellus nec erat pretium maximus eu et eros. Mauris ligula
+            ex, egestas non condimentum ut, rutrum eget massa. Aliquam erat
+            volutpat. Praesent fringilla egestas justo.
           </p>
-          <div className="space-y-4">
-            {accordionData.map((item, i) => (
-              <div key={item.label} className="bg-white rounded shadow-sm">
-                <button
-                  className="w-full flex justify-between items-center px-6 py-4 font-semibold text-black text-left focus:outline-none"
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  aria-expanded={openIndex === i}
-                >
-                  <span>{item.label}</span>
-                  <ChevronDown
-                    className={`ml-2 transition-transform ${
-                      openIndex === i ? "rotate-180" : ""
-                    }`}
-                    size={20}
-                  />
-                </button>
-                {openIndex === i && (
-                  <div className="px-6 pb-4 text-gray-500 text-sm animate-fade-in">
-                    {item.content}
-                  </div>
-                )}
-              </div>
+          <Accordion type="single" collapsible className="space-y-6">
+            {accordionData.map((step, i) => (
+              <AccordionItem key={i} value={step.label} className="bg-white shadow-md border-none">
+                <AccordionTrigger className="px-6 py-6 text-xl font-semibold text-black flex items-center justify-between">
+                  {step.label}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 text-gray-600 text-base">
+                  {step.content}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </div>
     </section>

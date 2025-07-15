@@ -1,42 +1,42 @@
 import React from "react";
-import { Calculator, Clock, Lightbulb, Handshake } from "lucide-react";
+import { CheckCircle, Clock, Users, Award } from "lucide-react";
 
 const features = [
   {
-    icon: <Calculator size={32} className="text-[#e4bb7d]" />,
-    title: "CAREFULLY",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Quality Service",
+    desc: "We provide the best quality service to our clients.",
+    icon: <CheckCircle className="w-6 h-6 text-[#e4bb7d]" />,
     shadow: true,
   },
   {
-    icon: <Clock size={32} className="text-[#e4bb7d]" />,
-    title: "FAST PROJECT",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Fast Delivery",
+    desc: "Quick and efficient delivery of our services.",
+    icon: <Clock className="w-6 h-6 text-[#e4bb7d]" />,
     shadow: false,
   },
   {
-    icon: <Lightbulb size={32} className="text-[#e4bb7d]" />,
-    title: "SMARTLY",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    shadow: false,
-  },
-  {
-    icon: <Handshake size={32} className="text-[#e4bb7d]" />,
-    title: "PERFECT",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Expert Team",
+    desc: "Our team consists of experienced professionals.",
+    icon: <Users className="w-6 h-6 text-[#e4bb7d]" />,
     shadow: true,
+  },
+  {
+    title: "Best Awards",
+    desc: "We have won multiple awards for our excellence.",
+    icon: <Award className="w-6 h-6 text-[#e4bb7d]" />,
+    shadow: false,
   },
 ];
 
 const WhyChooseUsSection = () => {
   return (
     <section className="w-full py-16 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 px-4 md:px-8 items-center justify-between">
-        <div className="flex-1 flex flex-col items-start justify-center max-w-lg">
-          <p className="text-[#e4bb7d] text-base font-semibold mb-2 uppercase tracking-wide">
+      <div className="max-w-[80rem] mx-auto flex flex-col md:flex-row gap-8 p-6 lg:p-0 items-center justify-between">
+        <div className="flex-1 flex flex-col items-start justify-center">
+          <p className="text-[#e4bb7d] text-base font-semibold mb-8 uppercase tracking-wide">
             WHY CHOOSE US
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
             WE GAVE BETTER
           </h2>
           <p className="text-gray-500 text-sm md:text-base mb-8 max-w-md">
@@ -48,17 +48,17 @@ const WhyChooseUsSection = () => {
             OUR PROJECT
           </button>
         </div>
-        <div className="flex-1 flex items-center justify-center w-full">
-          <div className="grid grid-cols-2 grid-rows-2 gap-6 w-full max-w-xl">
+        <div className="flex-1 flex items-center justify-end w-full">
+          <div className="grid grid-cols-2 grid-rows-2 gap-8 w-full max-w-xl">
             {features.map((feature, i) => (
               <div
                 key={feature.title}
-                className={`bg-white rounded p-6 flex flex-col items-start ${
+                className={`bg-white p-6 flex flex-col items-start ${
                   feature.shadow ? "shadow-md" : ""
                 }`}
               >
-                <div className="mb-2">{feature.icon}</div>
-                <div className="font-bold text-black mb-1">{feature.title}</div>
+                <div className="mb-4">{feature.icon}</div>
+                <div className="font-bold text-black mb-4">{feature.title}</div>
                 <div className="text-gray-500 text-sm">{feature.desc}</div>
               </div>
             ))}

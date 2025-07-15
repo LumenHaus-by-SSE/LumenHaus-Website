@@ -5,7 +5,7 @@ const imgPlaceholder = "/images/img-placeholder.svg"; // Place a placeholder ima
 
 const progressCards = [
   { percent: 40, label: "DESIGN", sub: "SPENT PER PROJECT" },
-  { percent: 40, label: "DESIGN", sub: "SPENT PER PROJECT" },
+  { percent: 40, label: "DEVELOPMENT", sub: "SPENT PER PROJECT" },
 ];
 
 const steps = [
@@ -25,11 +25,11 @@ const steps = [
 
 const HowWeDoSection = () => {
   return (
-    <section className="w-full py-12 relative bg-white">
-      <div className="bg-[#f3f3f3] absolute top-0 left-0 h-full w-2/3 sm:w-2/5 z-0"></div>
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 px-4 md:px-8">
-        <div className="flex-1 flex flex-col items-center lg:items-start">
-          <div className="w-full max-w-lg aspect-[5/3] bg-gray-400 mx-auto relative overflow-hidden">
+    <section className="w-full py-16 relative bg-white">
+      <div className="bg-[#f3f3f3] absolute top-0 left-0 h-full w-2/3 sm:w-2/5 z-0 hidden"></div>
+      <div className="max-w-[80rem] mx-auto flex flex-col justify-between lg:flex-row gap-8 p-6 xl:p-0">
+        <div className="flex-1 flex flex-col items-center">
+          <div className="w-full max-w-2xl aspect-[5/3] bg-gray-400 mx-auto relative overflow-hidden">
             <Image
               src={imgPlaceholder}
               alt="How We Do"
@@ -61,7 +61,7 @@ const HowWeDoSection = () => {
                       cy="18"
                       r="16"
                       fill="none"
-                      stroke="#e4bb7d"
+                      stroke="#222"
                       strokeWidth="4"
                       strokeDasharray={`${card.percent}, 100`}
                       strokeLinecap="round"
@@ -72,7 +72,9 @@ const HowWeDoSection = () => {
                   </span>
                 </div>
                 <div className="text-center">
-                  <div className="font-bold text-lg mt-2 text-black">{card.label}</div>
+                  <div className="font-bold text-lg mt-2 text-black">
+                    {card.label}
+                  </div>
                   <div className="text-xs text-gray-400 tracking-wide">
                     {card.sub}
                   </div>

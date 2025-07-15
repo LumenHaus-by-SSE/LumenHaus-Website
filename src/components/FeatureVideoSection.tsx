@@ -23,7 +23,7 @@ const FeatureVideoSection = () => {
       <section className="w-full py-8 sm:py-12 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-20 bg-white relative overflow-hidden">
         <div className="bg-[#f3f3f3] absolute top-0 left-0 h-full w-2/3 sm:w-2/5 z-0"></div>
 
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center">
+        <div className="max-w-[80rem] mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center">
           <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] shadow-xl  overflow-hidden">
             <video
               ref={videoRef}
