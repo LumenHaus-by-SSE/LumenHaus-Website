@@ -39,8 +39,8 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      <header className="w-full p-8 bg-[#1d1d1d] text-white flex items-center justify-center lg:mt-1">
+
+      <header className="w-full p-8 bg-[#1d1d1d] text-white flex items-center justify-center lg:mt-1 h-24">
         <nav className="lg:w-3/5 flex items-center justify-between w-full">
           <Link href="/">
             <Image
@@ -161,74 +161,6 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-      <nav
-        className={`w-full h-dvh z-1 fixed top-0 lg:hidden ${
-          openNav ? "translate-x-0" : "translate-x-[100%]"
-        } transform duration-300 ease-out bg-black`}
-      >
-        <div className="flex flex-col items-center justify-center h-full">
-          <div className="flex flex-col items-start justify-center gap-8">
-            <Link href="/" className="text-[#e4bb7d] text-2xl">
-              {navigations[0]}
-            </Link>
-            
-            {navigations.slice(1, -1).map((item: string, idx: number) => (
-              <div
-                key={item}
-                className="relative text-left"
-                onClick={() => setOpenDropdown(item)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <button
-                  className="text-white text-2xl focus:outline-none flex items-center gap-1"
-                  type="button"
-                >
-                  {item}
-                  <svg
-                    className="w-5 h-5 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                
-                {openDropdown === item && (
-                  <div className="absolute left-0 w-40 shadow-lg bg-[#222] z-20">
-                    <div className="py-1 flex flex-col">
-                      {dropdowns[item as keyof typeof dropdowns].map(
-                        (sub, subIdx) => (
-                          <Link
-                            key={subIdx}
-                            href={sub.href}
-                            onClick={() => setOpenNav(false)}
-                            className="block px-6 py-4 text-sm text-white hover:bg-[#333]"
-                          >
-                            {sub.label}
-                          </Link>
-                        )
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-            <Link
-              href="/contact"
-              className="text-white text-2xl"
-            >
-              {navigations[navigations.length - 1]}
-            </Link>
-          </div>
-        </div>
-      </nav>
-    </>
   );
 };
 export default Navbar;

@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7747fa5f-c13d-404a-a27b-100a2109806c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(root)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AboutSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Categories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FeatureVideoSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Hero.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Projects.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Services.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Stats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cta.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navmenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/topbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(root)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/topbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +32,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/aryan/Desktop/lumenhaus",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/Users/aryan/Desktop/Codes/new-portfolio",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\aryan\\Desktop\\lumenhaus\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\aryan\\Desktop\\Codes\\LumenHaus-Website\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,6 +65,7 @@
       <updated>1751360458716</updated>
       <workItem from="1751360460186" duration="8047000" />
       <workItem from="1751436484139" duration="10107000" />
+      <workItem from="1754644228650" duration="1623000" />
     </task>
     <servers />
   </component>

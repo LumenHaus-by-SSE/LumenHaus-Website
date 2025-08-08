@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${poppins.className}`}
       >
         <Topbar/>
-        <Navbar/>
+        {/*<Navbar/>*/}
         {children}
         <Footer/>
       </body>
